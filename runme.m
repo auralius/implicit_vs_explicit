@@ -3,7 +3,7 @@
 % We will compare the explicit vs implicit method
 % while using ode45 executed at 1kHz as the ground truth.
 
-function test1()
+function runme()
 clear all;
 close all;
 clc;
@@ -18,7 +18,7 @@ time_span =t_start:Ts:t_end;
 k = 100;       % spring stiffness. N/m
 m = 5;         % mass, kg
 %b = 2*sqrt(k*m);  %critical damping
-b = 0;         % When no damping, implit Euler still damps the oscillation!
+b = 0;         % When no damping, implicit Euler still damps the oscillation!
  
 % Inital conditoin
 initial_position = 0.1;
@@ -56,7 +56,7 @@ end
 % Implicit Euler
 % By Auralius Manurung
 % Reference: D. Baraff and A. Witkin, Large steps in cloth simulation
-%            SIGGRAPH ’98
+%            SIGGRAPH ï¿½98
 %*************************************
 function [x,t] = implicit_euler(time_span, x0, m, b, k)
 Ts = time_span(2)-time_span(1);
